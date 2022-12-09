@@ -24,17 +24,17 @@ phases:
       - >
         docker build \
           -f be/Dockerfile \
-          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-be:prod \
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-be:dev \
           ./be
       - >
         docker build \
           -f fe/Dockerfile \
-          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-fe:prod \
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-fe:dev \
           --build-arg NODE_ENV=production \
           --build-arg REACT_APP_API_SERVICE_URL=$REACT_APP_API_SERVICE_URL \
           ./fe
   post_build:
     commands:
     - echo pushing prod images to ecr...
-    - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-be:prod
-    - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-fe:prod
+    - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-be:dev
+    - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/twtr-fe:dev
