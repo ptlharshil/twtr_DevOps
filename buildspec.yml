@@ -18,8 +18,9 @@ phases:
   build:
     commands:
       - docker login -u saikiranreddykonda -p Bostoncity@001
-      - docker-compose up -d --build
       - echo building dev images...
+      - docker-compose up -d --build
+      - echo building prod images...
       - >
         docker build \
           -f be/Dockerfile \
