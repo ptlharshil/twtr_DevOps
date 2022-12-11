@@ -23,7 +23,7 @@ const THome = () => {
         }
         
       };
-       const res = await fetch("http://localhost:5000/tweets-results",config);
+       const res = await fetch("http://localhost:5000/tweets",config);
       //const res = await fetch(`${process.env.REACT_APP_BE_NETWORK}:${process.env.REACT_APP_BE_PORT}/tweets-results`);
       // const res = await fetch(
       //   `${process.env.REACT_APP_API_SERVICE_URL}/tweets-results`
