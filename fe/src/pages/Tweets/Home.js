@@ -9,7 +9,21 @@ const THome = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-       const res = await fetch("http://0.0.0.0:5000/tweets-results",{mode:"cors"});
+      const config = {
+        method: "GET",
+        mode:"cors",
+        headers: {
+          
+          "Access-Control-Allow-Headers" : "Content-Type",
+          "Access-Control-Allow-Origin": "http://localhost:5000",
+          "Access-Control-Allow-Methods": "GET",
+          Accept: "application/json",
+          "Content-Type": "application/json"
+
+        }
+        
+      };
+       const res = await fetch("http://localhost:5000/tweets-results",config);
       //const res = await fetch(`${process.env.REACT_APP_BE_NETWORK}:${process.env.REACT_APP_BE_PORT}/tweets-results`);
       // const res = await fetch(
       //   `${process.env.REACT_APP_API_SERVICE_URL}/tweets-results`
