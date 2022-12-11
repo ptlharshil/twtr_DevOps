@@ -100,7 +100,7 @@ const Compose = () => {
         "Compose.js: fetching from " +
           `${process.env.REACT_APP_API_SERVICE_URL}/tweet`
       );
-       const response = await fetch("http://localhost:5000/tweet", config);
+       const response = await fetch("http://0.0.0.0:5000/tweet", config);
       //const response = await fetch(`${process.env.REACT_APP_BE_NETWORK}:${process.env.REACT_APP_BE_PORT}/tweet`, config);
       // const response = await fetch(
       //   `${process.env.REACT_APP_API_SERVICE_URL}/tweet`,
